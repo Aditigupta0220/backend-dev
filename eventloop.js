@@ -1,0 +1,14 @@
+// Exercise 5: Event Loop
+// Write a program demonstrating the execution order of setTimeout, setImmediate,
+// process.nextTick, and Promise callbacks.
+console.log('Start');
+
+process.nextTick(() => console.log('Next tick'));
+
+setTimeout(() => console.log('Timeout'), 0);
+
+setImmediate(() => console.log('Immediate'));
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('End');
